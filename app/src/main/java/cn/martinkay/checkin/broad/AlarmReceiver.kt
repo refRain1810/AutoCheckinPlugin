@@ -111,7 +111,7 @@ class AlarmReceiver : BroadcastReceiver() {
                         if (Shell.su("input keyevent 26").exec().isSuccess) {
                             Log.i("AlarmReceiver", "ROOT shell亮屏成功")
                         }
-                        if (Shell.su("input swipe 300 1000 300 500").exec().isSuccess) {
+                        if (Shell.su("input swipe 500 2000 500 1000").exec().isSuccess) {
                             Log.i("AlarmReceiver", "ROOT shell向上滑动解锁成功")
                         }
                     } catch (e: Exception) {
@@ -126,7 +126,7 @@ class AlarmReceiver : BroadcastReceiver() {
                     } else {
                         Log.i("AlarmReceiver", "Shizuku ibinder亮屏失败")
                     }
-                    val (first) = execute("input swipe 300 1000 300 500", Constant.isRoot)
+                    val (first) = execute("input swipe 500 2000 500 1000", Constant.isRoot)
                     if (first == 0) {
                         Log.i("AlarmReceiver", "Shizuku ibinder向上滑动解锁成功")
                     } else {
